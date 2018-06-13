@@ -1,0 +1,29 @@
+
+<!-- <mat-progress-bar mode="determinate" value="40"></mat-progress-bar> -->
+ 
+
+<div class="loginPage">
+  <mat-toolbar>Login</mat-toolbar>
+  <div>
+    <div class="login">
+      <form class="example-form" name="myForm" >
+        <mat-form-field class="example-full-width" >
+          <input matInput [(ngModel)]="tUsername"  placeholder="Username" name="uname">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput [(ngModel)]="tPassword" placeholder="Password" name="pass">
+        </mat-form-field>
+      </form>
+    </div>
+    <div>
+      <button mat-button (click)="requestLogin()">Login</button>
+    </div>
+  </div>
+</div>
+
+<div>
+  <!-- for hiding components -->
+  <!-- [ngStyle]="getStyle()" -->
+  <label [hidden]="true" 
+   [style.color]="getColor()">test hidden</label>
+</div>

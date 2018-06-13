@@ -1,0 +1,76 @@
+<div *ngFor="let result of searchResults">
+    <div class="busouter">
+        <div class="buslisting" (click)="selectbus(result.Id)">
+            <label>Bus Number : {{result.Id}}</label>
+            <br/>
+            <label>From : {{result.From}}</label>
+            <br/>
+            <label>To : {{result.To}}</label>
+            <br/>
+        </div>
+        <div class="busdetails" *ngIf="result.Id == enablebusdetails">
+            <label>Start Date: {{busDetails.TripStartDate}}</label>
+            <br/>
+            <label>No of seats : {{busDetails.NoOfSeats}}</label>
+            <br/>
+            <div class="seatdiv" *ngFor="let seat of busDetails.SeatDetails">
+                <img *ngIf="!(currentUser != seat.UserId && seat.UserId !='0')" src="./assets/images/seat-vacant.png" width="20px" />
+                <img *ngIf="currentUser != seat.UserId && seat.UserId !='0'" src="./assets/images/seat-booked.png" width="20px" /> {{seat.Id}}
+                <input class="seatcls" type="checkbox" [(ngModel)]="seat.Selected" (ngModelChange)="calculatePrice()" [disabled]="currentUser != seat.UserId && seat.UserId !='0'"
+                />
+                
+            </div>
+            <button (click)="bookseat()">Book seat</button>
+            <!-- <div *ngIf="currentPrice">
+                {{currentPrice}}
+            </div> -->
+
+
+
+
+            <!--
+                currentPrice variable is sharing through out, so the price will be same for all buses.
+                Need fix
+            -->
+        </div>
+    </div>
+    
+    
+    
+</div>
+        <div class="pricediv">
+            <label>Base Price : </label> {{currentPrice}}
+            <br/>
+            <label>GST % : </label>{{currentPrice | gstCalculator:10}}
+            <br/>
+            <label>Total Price : </label> {{currentPrice + (currentPrice | gstCalculator)}}
+            <br/>
+        </div>
+
+        
+        <div class="paymentOptcls">
+            <select [(ngModel)]="paymentOpt">
+                <option [value]="1" [selected]> Internet Banking</option>
+                <option [value]="2"> Credit Card</option>
+                <option [value]="3"> COD</option>
+                
+
+            </select>
+        </div>
+        <div [ngSwitch]="paymentOpt">
+            <div *ngSwitchCase="1">
+               <app-ibanking [totalPrice] = "currentPrice + (currentPrice | gstCalculator)"></app-ibanking>
+            </div>
+            <div *ngSwitchCase="2">
+                <app-ccard></app-ccard>
+            </div>
+            <div *ngSwitchCase="3">
+               <app-cod></app-cod>
+                
+            </div>
+        </div>
+
+
+        <div class="gosearch">
+                <button (click)="goToSearch()">go to search</button>
+        </div>

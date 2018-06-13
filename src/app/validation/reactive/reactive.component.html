@@ -1,0 +1,25 @@
+<div>
+  <form [formGroup]="reactForm" (ngSubmit)="submitForm(reactForm.value)">
+    Name
+    <input type="text" formControlName="name">
+    <br>
+    <label style="color: red" *ngIf="reactForm.get('name').hasError('required') && reactForm.get('name').touched">name required</label>
+    <br> Email
+    <input type="text" formControlName="email">
+    <br>
+    <label style="color: red" *ngIf="reactForm.get('email').hasError('email') ">valid email required</label>
+    <br>
+    <label style="color: red" *ngIf="reactForm.get('email').hasError('required') && reactForm.get('email').touched"> email required</label>
+    <br> Web
+    <input type="text" formControlName="web">
+
+    <br>
+    <label style="color: red" *ngIf="reactForm.get('web').hasError('inValidUrl') && reactForm.get('web').touched"> valid url required</label>
+   <br>
+
+
+    <input type="submit" [disabled]="reactForm.invalid">
+    <br>
+
+  </form>
+</div>

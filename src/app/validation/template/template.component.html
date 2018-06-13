@@ -1,0 +1,16 @@
+<div>
+  <form #eventForm="ngForm" (ngSubmit)="submitForm(eventForm)">
+    Name :
+    <input type="text" name="name" required [(ngModel)]="tName" pattern="[a-zA-Z]+">
+    <br>
+    <label style="color: red" *ngIf="eventForm.controls.name?.invalid && eventForm.controls.name?.touched">Name required</label>
+
+    <br> Email :
+    <input type="text" name="email" required   [(ngModel)]="tEmail">
+    <br>
+    <label style="color: red" pattern="[^\s@]+@[^\s@]+\.[^\s@]+" *ngIf="eventForm.controls.email?.invalid && eventForm.controls.email?.touched">Email required</label>
+    <br>
+
+    <input type="submit" [disabled]="eventForm.invalid"  >
+  </form>
+</div>

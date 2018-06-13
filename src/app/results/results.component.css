@@ -1,0 +1,49 @@
+.buslisting{
+    background-color: beige;    
+    padding: 17px;
+    border-radius: 11px;
+    margin-bottom: 10px;
+}
+.busdetails{
+    background-color: lightblue;
+    padding: 17px;
+    border-radius: 11px;
+    margin-bottom: 10px;
+}
+.busouter{
+    background-color: grey;
+    padding: 17px;
+    border-radius: 11px;
+    margin-bottom: 10px;
+}
+.head{
+    background-color: burlywood;
+
+    text-align: center;
+    border-radius: 10px;
+
+}
+.seatcls{
+    margin-right: 20px;
+}
+.seatdiv{
+    width: 10%;
+    float: left;
+    height: 20px;
+    background-color: lightgrey;
+    margin-right: 5px;
+}
+.gosearch{
+    margin-top: 50px;
+}
+.pricediv{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: lightblue;
+    padding: 10px;
+    line-height: 25px;
+}
+.paymentOptcls{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

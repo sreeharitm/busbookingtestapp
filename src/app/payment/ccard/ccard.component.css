@@ -1,0 +1,15 @@
+.labelcls{
+    width: 50%;
+    float: left;
+}
+.fieldcls{
+    width: 50%;
+    float: left;
+}
+.layer{
+    height: 30px;;
+}
+.ibc{
+    background-color: lightgrey;
+    padding: 10px;
+}

@@ -1,0 +1,45 @@
+<div class="searchbuscls">
+
+  <a href="get">Get</a><br>
+  <a href="post">Post</a><br>
+
+
+  <div class="">
+    <form class="example-form" name="myForm">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="From" [(ngModel)]="tFrom" name="from">
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="To" [(ngModel)]="tTo" name="to">
+      </mat-form-field>
+      <br>
+      
+      <!-- <mat-form-field class="example-full-width">
+        <input matInput placeholder="Date" [(ngModel)]="tDate" name="from">
+      </mat-form-field> -->
+
+      <!-- [(ngModel)]="tDate" -->
+
+      <mat-form-field>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" name="choosendate" forma [(ngModel)]="tDate">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <!-- <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field> -->
+      <br>
+      
+    </form>
+  </div>
+
+  <!-- <select  [(ngModel)]="tUser">
+    <option  *ngFor="let user of users">{{user.UserId}}</option>
+  </select> -->
+
+  <button mat-button (click)="searchForBus()">Search</button>
+</div>
+<router-outlet></router-outlet>
