@@ -29,6 +29,7 @@ import { ReactiveComponent } from './validation/reactive/reactive.component';
 import { CustobservablesComponent } from './custobservables/custobservables.component';
 import { AlertComponent } from './alert/alert.component';
 import { AlertService } from './alert.service';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AlertService } from './alert.service';
     ReactiveComponent,
     CustobservablesComponent,
     AlertComponent,
+    LifecycleComponent,
     // MatProgressBarModule
   ],
   imports: [

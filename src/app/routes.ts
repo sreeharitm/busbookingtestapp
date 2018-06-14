@@ -9,6 +9,7 @@ import { ProjComponent } from './proj/proj.component';
 import { TemplateComponent } from './validation/template/template.component';
 import { ReactiveComponent } from './validation/reactive/reactive.component';
 import { CustobservablesComponent } from './custobservables/custobservables.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 
 const myroute: Routes = [{ path: '', component: LoginComponent },
@@ -34,6 +35,7 @@ const myroute: Routes = [{ path: '', component: LoginComponent },
 { path: 'get', component: GetComponent },
 { path: 'post', component: PostComponent },
 { path: 'login', component: LoginComponent },
+{ path: 'lifecycle', component: LifecycleComponent },
 { path: '**', component: ErrorComponent }
 ]
 
